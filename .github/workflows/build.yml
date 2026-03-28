@@ -22,7 +22,7 @@ jobs:
       
       - name: Build with Gradle
         run: |
-          gradle wrapper --gradle-version=8.2
+          gradle wrapper --gradle-version=8.4 --no-daemon
           chmod +x gradlew
           ./gradlew assembleDebug --no-daemon
         shell: bash
