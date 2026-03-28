@@ -25,7 +25,6 @@ jobs:
         
     - name: Build APK
       run: |
-        cd SocksProxyApp
         chmod +x gradlew
         ./gradlew assembleDebug --no-daemon
       shell: bash
@@ -34,4 +33,4 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: app-debug
-        path: SocksProxyApp/app/build/outputs/apk/debug/*.apk
+        path: app/build/outputs/apk/debug/*.apk
