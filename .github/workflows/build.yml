@@ -18,14 +18,9 @@ jobs:
         java-version: '17'
         distribution: 'temurin'
         
-    - name: Setup Gradle
-      uses: gradle/gradle-build-action@v2
-      with:
-        gradle-version: '8.4'
-        
     - name: Build APK
       run: |
-        chmod +x gradlew
+        gradle wrapper --gradle-version 8.4
         ./gradlew assembleDebug --no-daemon
       shell: bash
       
