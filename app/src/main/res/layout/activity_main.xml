@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="20dp"
+    android:gravity="center_horizontal">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="代理工具"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="#4CAF50"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="30dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="服务器地址:"
+        android:textSize="16sp"
+        android:layout_gravity="left"/>
+
+    <EditText
+        android:id="@+id/serverEdit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="例如: 192.168.31.42"
+        android:inputType="text"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="16dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="端口:"
+        android:textSize="16sp"
+        android:layout_gravity="left"/>
+
+    <EditText
+        android:id="@+id/portEdit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="默认: 1080"
+        android:inputType="number"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="16dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginTop="10dp">
+
+        <Button
+            android:id="@+id/startButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="启动代理"
+            android:backgroundTint="#4CAF50"
+            android:layout_marginEnd="10dp"/>
+
+        <Button
+            android:id="@+id/stopButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="停止代理"
+            android:backgroundTint="#F44336"
+            android:enabled="false"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/statusText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="状态: 已停止"
+        android:textSize="18sp"
+        android:textColor="#FF5722"
+        android:layout_marginTop="30dp"/>
+
+    <TextView
+        android:id="@+id/ipText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="本地代理: 127.0.0.1:10809"
+        android:textSize="14sp"
+        android:textColor="#666666"
+        android:layout_marginTop="10dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="使用方法:\n1. 启动代理服务\n2. 在WiFi设置中配置代理\n   地址: 手机IP地址\n   端口: 10809"
+        android:textSize="12sp"
+        android:textColor="#888888"
+        android:layout_marginTop="30dp"
+        android:padding="10dp"
+        android:background="#F5F5F5"/>
+
+</LinearLayout>

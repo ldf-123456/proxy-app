@@ -1,0 +1,32 @@
+name: Build APK
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Set up JDK
+      uses: actions/setup-java@v3
+      with:
+        java-version: '17'
+        distribution: 'temurin'
+        
+    - name: Setup Gradle
+      run: |
+        cd SocksProxyApp
+        chmod +x gradlew
+        ./gradlew assembleDebug --no-daemon
+      shell: bash
+      
+    - name: Upload APK
+      uses: actions/upload-artifact@v3
+      with:
+        name: app-debug
+        path: SocksProxyApp/app/build/outputs/apk/debug/*.apk
